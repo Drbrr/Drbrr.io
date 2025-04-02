@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <audio id="musik" loop>
-        <source src="musik/When I was Your Man.mp3" type="audio/mpeg">
-    </audio>
-    <button onclick="document.getElementById('musik').play()">Play Musik</button>
-    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,22 +9,31 @@
     <title>Flowers</title>
 </head>
 <body>
+    <audio id="musik">
+        <source src="musik/When I was Your Man.mp3" type="audio/mpeg">
+    </audio>
+    
     <div class="greetings">
-    <!-- silahkan menambah kata sesuai keinginan dengan <span>text...</span -->
         <span>H</span>
         <span>A</span>
         <span>L</span>
         <span>L</span>
         <span>O</span>
     </div>
+    
     <div class="description">
         <span>Kina ada hadiah spesial buat kamu!!</span>
     </div>
+    
     <div class="button">
-        <button>
-            <a href="flower.html">Klik disini</a>
-        </button>
-        
+        <button onclick="goToNextPage()">Klik disini</button>
     </div>
+    
+    <script>
+        function goToNextPage() {
+            localStorage.setItem("playMusic", "true"); // Simpan status musik
+            window.location.href = "flower.html"; // Pindah ke halaman baru
+        }
+    </script>
 </body>
 </html>

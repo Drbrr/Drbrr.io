@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <audio id="musik" autoplay>
+    <source src="musik/When I was Your Man.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    window.addEventListener("DOMContentLoaded", function () {
+        let shouldPlay = localStorage.getItem("playMusic"); // Cek status
+        if (shouldPlay === "true") {
+            let audio = document.getElementById("musik");
+            audio.play();
+            localStorage.removeItem("playMusic"); // Hapus status agar tidak berulang
+        }
+    });
+</script>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
