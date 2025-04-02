@@ -4,15 +4,8 @@
     <audio id="musik" loop>
         <source src="musik/When I was Your Man.mp3" type="audio/mpeg">
     </audio>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let audio = document.getElementById("musik");
-            audio.play().catch(error => {
-                console.log("Autoplay dicegah, user harus berinteraksi dulu.");
-            });
-        });
-    </script>
-
+    <button onclick="document.getElementById('musik').play()">Play Musik</button>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
